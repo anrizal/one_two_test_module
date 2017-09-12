@@ -1,0 +1,6 @@
+name: OneTwo, OneTwo
+description: Test tests
+package: Testing
+
+type: module
+core: 8.x
