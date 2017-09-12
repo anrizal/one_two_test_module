@@ -1,6 +1,8 @@
 <?php
 
-namespaceDrupal\Tests\one_two\Unit;
+namespace Drupal\Tests\one_two\Unit;
+
+use Drupal\Tests\UnitTestCase;
 
 /**
  * @coversDefaultClass \Drupal\user\UserAuth
@@ -41,7 +43,7 @@ class MockingTest extends UnitTestCase {
      * @dataProvider authenticationProvider
      */
 
-    public function testAuthenticate ( $user_id, $username, $password, $correct_password, $expected) {
+    public function testAuthenticate ($user_id, $username, $password, $correct_password, $expected) {
         $this->entityManager->getStorage('user')
             ->willReturn($this->entityStorage->reveal());
 
@@ -70,9 +72,9 @@ class MockingTest extends UnitTestCase {
         $this->assertEquals($expected, $user_auth->authenticate($username, $password));
     }
 
-        /**
-         * @covers ::authenticate
-         */
+    /**
+     * @covers ::authenticate
+     */
     public function authenticationProvider() {
         return [
             // A correct user name and password.
@@ -83,5 +85,5 @@ class MockingTest extends UnitTestCase {
             [1, '', 'hunter2', 'hunter2', FALSE],
             // Missing password, should return FALSE.
             [1, 'Majken Ljunggren', '', 'hunter2', FALSE]];
-        }
+    }
 }
