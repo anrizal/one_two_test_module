@@ -2,7 +2,13 @@
 
 namespace Drupal\Tests\one_two\Unit;
 
+use Drupal\Core\Entity\EntityManagerInterface;
+use Drupal\Core\Entity\EntityStorageInterface;
+use Drupal\Core\Password\PasswordInterface;
 use Drupal\Tests\UnitTestCase;
+use Drupal\user\UserAuth;
+use Drupal\user\UserInterface;
+
 
 /**
  * @coversDefaultClass \Drupal\user\UserAuth
